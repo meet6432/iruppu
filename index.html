@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iruppu - South Indian Café</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #faf3e0;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      background-color: #fff;
+      padding: 0 50px;
+      position: relative;
+    }
+
+    /* Branding - Iruppu centered for desktop */
+    .branding {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #ff6f61;
+      text-align: center;
+      letter-spacing: 5px;
+    }
+
+    /* Video in top left without any frame or border */
+    .video-container {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none; /* Remove border */
+    }
+
+    /* Desktop navigation */
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 50px;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff6f61;
+    }
+
+    /* Burger menu for mobile */
+    .burger-menu {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 50px;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* Mobile Navigation Menu */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-nav a {
+      color: #333;
+      text-decoration: none;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .mobile-nav a:hover {
+      color: #ff6f61;
+    }
+
+    section {
+      padding: 50px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      color: #ff6f61;
+    }
+
+    /* Menu items styling */
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .menu-item {
+      width: 400px; /* Increase size */
+      height: 400px; /* Fixed height */
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Hover effect (normal hover) */
+    .menu-item:hover {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Center video and increase size */
+    .menu-item video {
+      width: 90%;
+      border-radius: 10px;
+      margin: auto;
+      transition: transform 0.3s ease;
+      border: none; /* Remove border */
+    }
+
+    /* Text inside menu item */
+    .menu-item h2 {
+      margin: 15px 0;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .menu-item p {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* Responsive styling for mobile */
+    @media (max-width: 768px) {
+      /* Hide Iruppu branding */
+      .branding {
+        display: none;
+      }
+
+      /* Video logo centered */
+      .video-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 350px;
+        height: 350px;
+        margin: 0 auto;
+        border: none;
+      }
+
+      /* Burger menu icon */
+      .burger-menu {
+        display: block;
+      }
+
+      /* Hide desktop navigation */
+      nav {
+        display: none;
+      }
+
+      /* Menu items - bigger video size on mobile */
+      .menu-item {
+        width: 100%;
+        height: auto;
+        position: center;
+      }
+
+      .menu-item video {
+        width: 350px;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Branding - Iruppu centered for large screens -->
+    <div class="branding">Iruppu</div>
+
+    <!-- Video logo -->
+    <div class="video-container">
+      <video autoplay muted loop id="top-video">
+        <source src="ImageToStl.com_irippu_logo_0923052420.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Desktop nav links -->
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#order">Order Online</a>
+    </nav>
+
+    <!-- Burger menu for mobile -->
+    <div class="burger-menu" id="burger-menu">☰</div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#order">Order Online</a>
+    </div>
+  </header>
+
+  <section id="menu">
+    <h1>Our Specialties</h1>
+    <div class="menu">
+      <!-- Benne Dosa -->
+      <div class="menu-item">
+        <video autoplay muted loop class="menu-video">
+          <source src="ImageToStl.com_south_indian_dosa_wit_0923054718.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2>Benne Dosa</h2>
+        <p>Soft and crispy dosa with dollops of butter served with chutney and sambar.</p>
+      </div>
+
+      <!-- Mendu Vada -->
+      <div class="menu-item">
+        <video autoplay muted loop class="menu-video">
+          <source src="ImageToStl.com_medu_vada_on_a_plate_0923055536.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2>Mendu Vada</h2>
+        <p>Delicious fried lentil donuts served with coconut chutney and sambar.</p>
+      </div>
+
+      <!-- Idli -->
+      <div class="menu-item">
+        <video autoplay muted loop class="menu-video">
+          <source src="ImageToStl.com_idli_and_sambar_0923060702.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2>Idli</h2>
+        <p>Soft, fluffy steamed rice cakes served with sambar and chutney.</p>
+      </div>
+
+      <!-- Bombay Tikdi Vada -->
+      <div class="menu-item">
+        <video autoplay muted loop class="menu-video">
+          <source src="bombay_tikdi_vada.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2>Bombay Tikdi Vada</h2>
+        <p>Spicy and crispy vada filled with flavorful potato filling.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Iruppu - South Indian Café. All rights reserved.</p>
+  </footer>
+
+  <!-- Slowing down video playback speed -->
+  <script>
+    document.querySelectorAll('.menu-video').forEach(video => {
+      video.playbackRate = 0.5; // Slow down the speed of the menu videos
+    });
+
+    const burgerMenu = document.getElementById('burger-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    burgerMenu.addEventListener('click', () => {
+      mobileNav.style.display = mobileNav.style.display === 'none' || mobileNav.style.display === '' ? 'flex' : 'none'; }); </script>
+
+</body> </html> 
